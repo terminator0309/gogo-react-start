@@ -1,0 +1,20 @@
+@import "./_mixins.scss";
+@import "./_gogo.style.scss";
+@import "./_plugins.scss";
+
+/** your custom css code **/
+/* 
+html {
+    background-color: $theme-color-1 !important;
+}
+*/
+
+@media (min-width: 700px) {
+  .container {
+    max-width: 550px;
+  }
+}
+
+.container {
+  margin-top: 50px;
+}

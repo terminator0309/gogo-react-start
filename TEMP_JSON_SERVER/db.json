@@ -1,0 +1,48 @@
+{
+  "registeredUsers": [
+    {
+      "id": 0,
+      "firstname": "Sandeep",
+      "lastname": "Mandal",
+      "email": "xyz@abc.com",
+      "password": "abcd1234"
+    },
+    {
+      "firstname": "sandeep",
+      "lastname": "mandal",
+      "email": "sandeepmandal415@gmail.com",
+      "password": "xyz",
+      "id": 1
+    },
+    {
+      "firstname": "sandeep",
+      "lastname": "mandal",
+      "email": "sandeepmandal415@gmail.co",
+      "password": "sdafsdf"
+    },
+    {
+      "firstname": "sandeep",
+      "lastname": "mandal",
+      "email": "sandeepmandal415@gmail.c",
+      "password": "fasdasdf"
+    },
+    {
+      "firstname": "sandeep",
+      "lastname": "mandal",
+      "email": "sandeepmandal415@gmai",
+      "password": "fdas"
+    },
+    {
+      "firstname": "sandeep",
+      "lastname": "mandal",
+      "email": "2019ucp1423@mnit.ac.in",
+      "password": "asdfsdf"
+    },
+    {
+      "firstname": "sandeep",
+      "lastname": "mandal",
+      "email": "rnmandal@rediffmail.com",
+      "password": "hgkjhkhjg"
+    }
+  ]
+}
