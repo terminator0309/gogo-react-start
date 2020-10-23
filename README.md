@@ -1,3 +1,7 @@
+## basic json-server initialization command
+
+json-server --watch db.json -p 3001 --id email
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
