@@ -20,17 +20,15 @@ export default function Register({ setHeader, regSuccess, setRegSuccess }) {
     // alert(e.target.email.value);
     e.preventDefault();
 
-    const credentials = {
-      firstname: e.target.firstname.value,
-      lastname: e.target.lastname.value,
-      email: e.target.email.value,
-      password: e.target.password.value,
-    };
-
     //Registering User if Valid(using email ID as key)
-    return fetch(baseUrl + "registeredUsers", {
+    return fetch(baseUrl + "register", {
       method: "POST",
-      body: JSON.stringify(credentials),
+      body: JSON.stringify({
+        firstname: e.target.firstname.value,
+        lastname: e.target.lastname.value,
+        email: e.target.email.value,
+        password: e.target.password.value,
+      }),
       headers: {
         "Content-type": "application/json",
       },

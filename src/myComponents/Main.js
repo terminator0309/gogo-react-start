@@ -10,10 +10,17 @@ import Topnav from "../containers/navs/Topnav";
 const ViewWelcome = React.lazy(() => import("./Welcome"));
 const ViewRegister = React.lazy(() => import("./Register"));
 const ViewLogin = React.lazy(() => import("./Login"));
+const ViewProfile = React.lazy(() => import("./Profile"));
 
 export default function Main() {
   const [regSuccess, setRegSuccess] = useState(false);
   const [header, setHeader] = useState("Welcome");
+  const [userDetails, setUserDetails] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+  });
+
   return (
     <div>
       <Topnav header={header} />
@@ -30,15 +37,18 @@ export default function Main() {
                 setRegSuccess={setRegSuccess}
               />
             </Route>
-
             <Route path="/login" exact>
               <ViewLogin
                 setHeader={setHeader}
                 regSuccess={regSuccess}
                 setRegSuccess={setRegSuccess}
+                setUserDetails={setUserDetails}
               />
             </Route>
-            <Redirect to="/error" />
+            <Route path="/profile" exact>
+              <ViewProfile setHeader={setHeader} userDetails={userDetails} />
+            </Route>
+            <Redirect to="/" />
           </Switch>
         </Router>
       </Suspense>

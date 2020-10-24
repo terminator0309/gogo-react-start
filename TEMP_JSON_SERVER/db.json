@@ -43,6 +43,18 @@
       "lastname": "mandal",
       "email": "rnmandal@rediffmail.com",
       "password": "hgkjhkhjg"
+    },
+    {
+      "firstname": "sandeep",
+      "lastname": "mandal",
+      "email": "abc@abc.abc",
+      "password": "abc"
+    },
+    {
+      "firstname": "akjsdflk",
+      "lastname": "aksdfkl",
+      "email": "akljf@jkasjfs",
+      "password": "1234"
     }
   ]
 }

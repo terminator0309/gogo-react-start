@@ -1,1 +1,1 @@
-export const baseUrl = "http://localhost:3001/";
+export const baseUrl = "https://salty-taiga-37341.herokuapp.com/api/user/";
