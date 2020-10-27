@@ -1,6 +1,6 @@
-## basic json-server initialization command
+## Extension used for CORS
 
-json-server --watch db.json -p 3001 --id email
+https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

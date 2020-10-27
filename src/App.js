@@ -1,11 +1,6 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+
 import { IntlProvider } from "react-intl";
 import AppLocale from "./lang";
 import ColorSwitcher from "./components/common/ColorSwitcher";
@@ -14,17 +9,6 @@ import { isMultiColorActive, adminRoot } from "./constants/defaultValues";
 import { getDirection } from "./helpers/Utils";
 
 import Main from "./myComponents/Main";
-
-const ViewHome = React.lazy(() =>
-  import(/* webpackChunkName: "views" */ "./views/home")
-);
-const ViewApp = React.lazy(() =>
-  import(/* webpackChunkName: "views-app" */ "./views/app")
-);
-
-const ViewError = React.lazy(() =>
-  import(/* webpackChunkName: "views-error" */ "./views/error")
-);
 
 class App extends React.Component {
   constructor(props) {
@@ -52,32 +36,7 @@ class App extends React.Component {
           <>
             <NotificationContainer />
             {isMultiColorActive && <ColorSwitcher />}
-            {/*
-            <Suspense fallback={<div className="loading" />}>
-              <Router>
-                <Switch>
-                  <Route
-                    path={adminRoot}
-                    render={(props) => <ViewApp {...props} />}
-                  />
-                  <Route
-                    path="/error"
-                    exact
-                    render={(props) => <ViewError {...props} />}
-                  />
-                  <Route
-                    path="/home"
-                    exact
-                    render={(props) => <ViewHome {...props} />}
-                  />
-                  <Route path="/" exact render={() => <Main />} />
-                  <Route path="/register" exact render={() => <Register />} />
-                  <Route path="/login" exact render={() => <Login />} />
-                  <Redirect to="/error" />
-                </Switch>
-              </Router>
-            </Suspense>
-            */}
+            {/* Just rendering main component here because App component is a class-based component and functional components are easy to work with. */}
             <Main />
           </>
         </IntlProvider>

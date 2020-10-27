@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { Button, Card, Form, FormGroup, Input, Label } from "reactstrap";
-import { baseUrl } from "./TempServerUrl/baseUrl";
+import { baseUrl } from "./ServerUrl/baseUrl";
 
 export default function Login({ setHeader, regSuccess, setUserDetails }) {
-  const [regUsers, setRegUsers] = useState({});
   const [validUser, setValidUser] = useState(false);
 
   setHeader("Login");
@@ -18,12 +17,7 @@ export default function Login({ setHeader, regSuccess, setUserDetails }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    /*
-    const credentials = {
-      email: e.target.email.value,
-      password: e.target.password.value,
-    };
-*/
+
     return fetch(baseUrl + "login", {
       method: "POST",
       body: JSON.stringify({
@@ -58,58 +52,17 @@ export default function Login({ setHeader, regSuccess, setUserDetails }) {
         setValidUser(true);
       })
       .catch((error) => console.log(error));
-    /*
-    const credentials = {
-      email: e.target.email.value,
-      //password: e.target.password.value,
-    };
-
-    for (var i = 0; i < regUsers.length; i++) {
-      if (
-        regUsers[i].email === credentials.email
-        //regUsers[i].password === credentials.password
-      ) {
-        console.log("Found a match");
-        setValidUser(true);
-        setUserDetails({
-          firstname: regUsers[i].firstname,
-          lastname: regUsers[i].lastname,
-          email: regUsers[i].email,
-        });
-        break;
-      }
-    }*/
   }
-  /*
-  useEffect(() => {
-    return fetch(baseUrl + "login")
-      .then(
-        (response) => {
-          if (response.ok) {
-            return response;
-          } else {
-            var error = new Error(
-              "Error " + response.status + ": " + response.statusText
-            );
-            error.response = response;
-            throw error;
-          }
-        },
-        (error) => {
-          var errmess = new Error(error.message);
-          throw errmess;
-        }
-      )
-      .then((response) => response.json())
-      .then((users) => setRegUsers(users))
-      .catch((error) => console.log(error));
-  }, []);
-*/
+
   return (
     <div>
       <div className="container">
+        {/* redirecting to profile page if valid */}
         {validUser && <Redirect push to="/profile" />}
+
+        {/* if coming from register page */}
         {regSuccess && <Alert />}
+
         <Card className="p-5 m-0">
           {/* Login Form*/}
           <Form onSubmit={handleSubmit}>

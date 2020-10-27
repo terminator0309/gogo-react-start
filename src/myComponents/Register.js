@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { Button, Card, Form, FormGroup, Input, Label } from "reactstrap";
 
-import { baseUrl } from "./TempServerUrl/baseUrl";
+import { baseUrl } from "./ServerUrl/baseUrl";
 
 export default function Register({ setHeader, regSuccess, setRegSuccess }) {
   setHeader("Register");
@@ -17,10 +17,9 @@ export default function Register({ setHeader, regSuccess, setRegSuccess }) {
   };
 
   function handleSubmit(e) {
-    // alert(e.target.email.value);
     e.preventDefault();
 
-    //Registering User if Valid(using email ID as key)
+    //Registering User (used email ID as key)
     return fetch(baseUrl + "register", {
       method: "POST",
       body: JSON.stringify({
@@ -64,6 +63,7 @@ export default function Register({ setHeader, regSuccess, setRegSuccess }) {
   }
   return (
     <div className="container">
+      {/* If registered successfully, redirecting to login form page */}
       {regSuccess && <Redirect push to="/login" />}
       {showAlert && <Alert />}
       <Card className="p-5 m-0">
