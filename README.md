@@ -1,8 +1,8 @@
+Note: TEMP_JSON_SERVER is no longer used.
+
 ## Extension used for CORS
 
 https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
